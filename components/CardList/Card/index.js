@@ -1,43 +1,47 @@
-import "./Card.module.scss";
+import styles from "./Card.module.scss";
+import Image from "next/image";
 
 const Card = ({
   title = "Lorem Ipsum",
-  date = "1997",
-  parentalRating = "+18",
-  isMovie = true,
-  isbBookmarked = false,
+  year = "1997",
+  rating = "+18",
+  category = "Movie",
+  isBookmarked = false,
+  thumbnail,
 }) => {
   const categoryType = {
-    title: isMovie ? "Movie" : "TV Series",
-    icon: isMovie ? "movie" : "tv",
+    title: category === "Movie" ? "Movie" : "TV Series",
+    icon: category === "Movie" ? "movie" : "tv",
   };
 
-  const colorBookmarkSVG = isbBookmarked ? "white" : "none";
+  const colorBookmarkSVG = isBookmarked ? "white" : "none";
 
   return (
     <li className={styles.card}>
       <div className={styles.imgContent}>
         <Image
-          src="/a.png"
-          width={164}
-          height={110}
-          alt="Picture of the author"
+          src={`/${thumbnail.regular.medium}`}
+          alt={`Thumbnail of ${title} movie`}
+          style={{ objectFit: "cover" }}
+          sizes="(min-width: 768px) 28.646vw, (min-width: 1200px) 280px, 43.733vw"
+          fill
         />
 
         <div className={styles.hoveredContent}>
           <button className={styles.play} aria-label="Clique para assistir">
             <Image
+              aria-hidden="true"
               src="/icon-play.svg"
               width={30}
               height={30}
-              alt="Picture of the author"
+              alt="Icon of play button"
               className={styles.iconPlay}
             />
             Play
           </button>
         </div>
       </div>
-      <button className={styles.favorite} aria-label="Adicionar aos favoritos">
+      <button className={styles.favorite} aria-label="Favorite the movie">
         <svg
           width="12"
           height="14"
@@ -55,7 +59,7 @@ const Card = ({
 
       <div className={styles.texts}>
         <div className={styles.movieDetails}>
-          <span className={styles.detail}>{date}</span>
+          <span className={styles.detail}>{year}</span>
 
           <span className={styles.detail}>
             <Image
@@ -63,12 +67,13 @@ const Card = ({
               src={`/icon-category-${categoryType.icon}.svg`}
               width={10}
               height={10}
-              alt="Picture of the author"
+              alt="Icon of movie category"
+              aria-hidden="true"
             />
 
             {categoryType.title}
           </span>
-          <span className={styles.detail}>{parentalRating}</span>
+          <span className={styles.detail}>{rating}</span>
         </div>
         <h2 className={styles.title}>{title}</h2>
       </div>

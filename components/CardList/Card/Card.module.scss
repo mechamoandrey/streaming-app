@@ -2,7 +2,15 @@
 
 .card { 
   position: relative;
-  width: fit-content;
+  width: 43.733vw;
+
+  @include respond-to-md {
+    width: 28.646vw;
+  }
+
+  @include respond-to-xl {
+    width: 280px;
+  }
 }
 
 .favorite {
@@ -26,13 +34,22 @@
 
 .imgContent {
   position: relative;
-
+  height: 110px;
+  border-radius: 8px;
+  overflow: hidden;
+  
   @include respond-to-md {
+    height: 140px;
+    
     &:hover {
       .hoveredContent {
         display: flex;
       }
     }
+  }
+
+  @include respond-to-xl {
+    height: 174px;
   }
 }
 

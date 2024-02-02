@@ -1,3 +1,6 @@
-export default function A({ isMovie = true, isbBookmarked = false }) {
-  return <h1>a</h1>;
+import CardList from "@/components/CardList";
+import { data } from "./data";
+
+export default function Home() {
+  return <CardList moviesArr={data} />;
 }
