@@ -1,3 +1,5 @@
+@import '@/styles/_responsive.scss';
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -6,5 +8,22 @@
   background-color: rgb(var(--semi-dark-blue-rgb));
   padding: 0 4.267vw;
   margin-bottom: 24px;
+
+  @include respond-to-md {
+    height: 72px;
+    width: calc(100% - (2 * 3.255vw));
+    margin: 24px auto 32px;
+    border-radius: 8px;
+  }
 }
 
+.logo {
+  position: relative;
+  height: 20px;
+  width: 25px;
+
+  @include respond-to-md {
+    width: 32px;
+    height: 25px;
+  }
+}

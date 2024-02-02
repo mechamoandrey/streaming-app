@@ -7,12 +7,14 @@ import styles from "./Header.module.scss";
 const Header = () => {
   return (
     <header className={styles.header}>
-      <Image
-        src="/assets/icons/logo.svg"
-        alt="Streaming App Logo"
-        width={25}
-        height={20}
-      />
+      <div className={styles.logo}>
+        <Image
+          src="/assets/icons/logo.svg"
+          alt="Streaming App Logo"
+          sizes="(min-width: 768px) 32px, 25px"
+          fill
+        />
+      </div>
 
       <nav>
         {NAV_ITEMS.map((data, index) => (

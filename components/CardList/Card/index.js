@@ -20,7 +20,7 @@ const Card = ({
     <li className={styles.card}>
       <div className={styles.imgContent}>
         <Image
-          src={`/${thumbnail.regular.medium}`}
+          src={`/${thumbnail.regular.small}`}
           alt={`Thumbnail of ${title} movie`}
           style={{ objectFit: "cover" }}
           quality={80}
