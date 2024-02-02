@@ -1,4 +1,4 @@
-export const data = [
+export const MOVIES_DATA = [
   {
     title: "Beyond Earth",
     thumbnail: {

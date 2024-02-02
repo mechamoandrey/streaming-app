@@ -1,4 +1,5 @@
 import Card from "./Card";
+
 import styles from "./CardList.module.scss";
 
 const CardList = ({ moviesArr }) => {

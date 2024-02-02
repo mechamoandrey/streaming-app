@@ -23,6 +23,7 @@ const Card = ({
           src={`/${thumbnail.regular.medium}`}
           alt={`Thumbnail of ${title} movie`}
           style={{ objectFit: "cover" }}
+          quality={80}
           sizes="(min-width: 768px) 28.646vw, (min-width: 1200px) 280px, 43.733vw"
           fill
         />
