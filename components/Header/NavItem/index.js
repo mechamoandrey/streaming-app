@@ -9,9 +9,9 @@ const NavItem = ({ href, label, imgPath }) => {
       <Image
         src={`/assets/icons/icon-nav-${imgPath}.svg`}
         alt={`Icon ${label}`}
-        width={16}
-        height={16}
         aria-hidden="true"
+        sizes="(min-width: 768px) 20px, 16px"
+        fill
       />
     </Link>
   );

@@ -1,4 +1,16 @@
+@import '@/styles/_responsive.scss';
+
 .navIcon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  position: relative;
+
+  @include respond-to-md {
+    width: 20px;
+    height: 20px;
+  }
+
   &:not(:last-child) {
     margin-right: 24px;
   }

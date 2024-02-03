@@ -22,12 +22,14 @@ const Header = () => {
         ))}
       </nav>
 
-      <Image
-        src="/assets/image-avatar.png"
-        alt="User picture"
-        width={24}
-        height={24}
-      />
+      <div className={styles.avatar}>
+        <Image
+          src="/assets/image-avatar.png"
+          alt="User picture"
+          sizes="(min-width: 768px) 32px, (min-width: 1200px) 40px, 24px"
+          fill
+        />
+      </div>
     </header>
   );
 };
