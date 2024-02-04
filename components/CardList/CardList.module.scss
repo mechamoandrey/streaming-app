@@ -10,4 +10,9 @@
   @include respond-to-md {
     padding: 0 3.255vw;
   }
+
+  @include respond-to-xl {
+    padding: 0 36px 0 0;
+    gap: 32px 40px;
+  }
 }

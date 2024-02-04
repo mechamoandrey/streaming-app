@@ -1,3 +1,8 @@
 // filter: brightness(0) invert(1);
+@import '@/styles/_responsive.scss';
 
-
+.home {
+  @include respond-to-xl {
+    display: flex;
+  }
+}
