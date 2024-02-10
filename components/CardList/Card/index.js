@@ -1,5 +1,6 @@
 import styles from "./Card.module.scss";
 import Image from "next/image";
+import { memo } from "react";
 
 const Card = ({
   title = "Lorem Ipsum",
@@ -82,4 +83,4 @@ const Card = ({
   );
 };
 
-export default Card;
+export default memo(Card);

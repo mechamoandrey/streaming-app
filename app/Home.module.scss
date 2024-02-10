@@ -6,3 +6,31 @@
     display: flex;
   }
 }
+
+.main {
+  padding: 0 4.267vw;
+
+  @include respond-to-md {
+    padding: 0 3.255vw;
+  }
+
+  @include respond-to-xl {
+    padding: 0 36px 0 0;
+  }
+}
+
+.searchContent {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.input {
+  padding-left: 16px;
+  background-color: transparent;
+  font-size: 16px;
+  font-weight: 300;
+  color: white;
+  border: none;
+  width: 100%;
+}
