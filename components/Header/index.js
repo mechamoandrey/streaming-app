@@ -2,12 +2,12 @@ import NavItem from "./NavItem";
 import Image from "next/image";
 import { NAV_ITEMS } from "./data";
 
-import styles from "./Header.module.scss";
+import "./Header.scss";
 
 const Header = () => {
   return (
-    <header className={styles.header}>
-      <div className={styles.logo}>
+    <header className="header">
+      <div className="header__logo">
         <Image
           src="/assets/icons/logo.svg"
           alt="Streaming App Logo"
@@ -22,7 +22,7 @@ const Header = () => {
         ))}
       </nav>
 
-      <div className={styles.avatar}>
+      <div className="header__avatar">
         <Image
           src="/assets/image-avatar.png"
           alt="User picture"

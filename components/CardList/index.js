@@ -1,14 +1,30 @@
+import Heading from "../Heading";
 import Card from "./Card";
+import classnames from "classnames";
 
-import styles from "./CardList.module.scss";
+import "./CardList.scss";
 
-const CardList = ({ moviesArr }) => {
+const CardList = ({ moviesArr, title, trending }) => {
+  const listClass = classnames("cardList", {
+    ["cardList--trending"]: trending,
+  });
+
+  const listContentClass = classnames({
+    ["trendingContent"]: trending,
+  });
+
   return (
-    <ul className={styles.list}>
-      {moviesArr.map((data, index) => (
-        <Card key={index} {...data} />
-      ))}
-    </ul>
+    <>
+      <Heading title={title} />
+
+      <div className={listContentClass}>
+        <ul className={listClass}>
+          {moviesArr.map((data, index) => (
+            <Card trending={trending} key={index} {...data} />
+          ))}
+        </ul>
+      </div>
+    </>
   );
 };
 

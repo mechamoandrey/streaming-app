@@ -1,0 +1,35 @@
+@import '@/styles/_responsive.scss';
+
+.cardList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px 0;
+  
+  @include respond-to-xl {
+    padding: 0 36px 0 0;
+    gap: 32px 40px;
+  }
+  
+  &--trending {
+    flex-wrap: nowrap;
+    width: fit-content;
+    margin-bottom: 38px;
+  }
+}
+
+.trendingContent {
+  overflow-x: scroll;
+  width: calc(100% + 4.267vw);
+  padding-right: 4.267vw;
+
+  @include respond-to-md {
+    width: calc(100% + 3.255vw);
+    padding-right: 3.255vw;
+  }
+
+  @include respond-to-xl {
+    width: calc(100% + 36px);
+    padding-right: 36px;
+  }
+}

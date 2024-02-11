@@ -1,6 +1,7 @@
-import styles from "./Card.module.scss";
-import Image from "next/image";
 import { memo } from "react";
+import Image from "next/image";
+import "./Card.scss";
+import classnames from "classnames";
 
 const Card = ({
   title = "Lorem Ipsum",
@@ -9,6 +10,7 @@ const Card = ({
   category = "Movie",
   isBookmarked = false,
   thumbnail,
+  trending = false,
 }) => {
   const categoryType = {
     title: category === "Movie" ? "Movie" : "TV Series",
@@ -17,33 +19,55 @@ const Card = ({
 
   const colorBookmarkSVG = isBookmarked ? "white" : "none";
 
-  return (
-    <li className={styles.card}>
-      <div className={styles.imgContent}>
-        <Image
-          src={`/${thumbnail.regular.small}`}
-          alt={`Thumbnail of ${title} movie`}
-          style={{ objectFit: "cover" }}
-          quality={80}
-          sizes="(min-width: 768px) 28.646vw, (min-width: 1200px) 280px, 43.733vw"
-          fill
-        />
+  const cardClass = classnames("card", {
+    ["card--trending"]: trending,
+  });
 
-        <div className={styles.hoveredContent}>
-          <button className={styles.play} aria-label="Clique para assistir">
+  // heading s
+  // body m
+
+  // mobile 240 140
+  // tablet 470 230 desk
+
+  return (
+    <li className={cardClass}>
+      <div className="card__img">
+        {trending ? (
+          <Image
+            className="card__trendingImg"
+            src={`/${thumbnail.trending.small}`}
+            alt={`Thumbnail of ${title} movie`}
+            style={{ objectFit: "cover" }}
+            quality={80}
+            sizes="(min-width: 768px) 61.197vw, (min-width: 1200px) 470px, 64vw"
+            fill
+          />
+        ) : (
+          <Image
+            src={`/${thumbnail.regular.small}`}
+            alt={`Thumbnail of ${title} movie`}
+            style={{ objectFit: "cover" }}
+            quality={80}
+            sizes="(min-width: 768px) 28.646vw, (min-width: 1200px) 280px, 43.733vw"
+            fill
+          />
+        )}
+
+        <div className="card__hovered">
+          <button className="card__play" aria-label="Clique para assistir">
             <Image
               aria-hidden="true"
               src="/icon-play.svg"
               width={30}
               height={30}
               alt="Icon of play button"
-              className={styles.iconPlay}
+              className="card__iconPlay"
             />
             Play
           </button>
         </div>
       </div>
-      <button className={styles.favorite} aria-label="Favorite the movie">
+      <button className="card__bookmark" aria-label="Favorite the movie">
         <svg
           width="12"
           height="14"
@@ -59,13 +83,13 @@ const Card = ({
         </svg>
       </button>
 
-      <div className={styles.texts}>
-        <div className={styles.movieDetails}>
-          <span className={styles.detail}>{year}</span>
+      <div className="card__texts">
+        <div className="card__movieDetails">
+          <span className="card__detail">{year}</span>
 
-          <span className={styles.detail}>
+          <span className="card__detail">
             <Image
-              className={styles.categoryIcon}
+              className="card__categoryIcon"
               src={`/icon-category-${categoryType.icon}.svg`}
               width={10}
               height={10}
@@ -75,9 +99,9 @@ const Card = ({
 
             {categoryType.title}
           </span>
-          <span className={styles.detail}>{rating}</span>
+          <span className="card__detail">{rating}</span>
         </div>
-        <h2 className={styles.title}>{title}</h2>
+        <h2 className="card__title">{title}</h2>
       </div>
     </li>
   );

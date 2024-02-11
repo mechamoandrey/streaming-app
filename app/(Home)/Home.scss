@@ -1,0 +1,22 @@
+// filter: brightness(0) invert(1);
+@import '@/styles/_responsive.scss';
+
+.home {
+  @include respond-to-xl {
+    display: flex;
+  }
+}
+
+.main {
+  padding: 0 4.267vw;
+
+  @include respond-to-md {
+    padding: 0 3.255vw;
+  }
+
+  @include respond-to-xl {
+    padding: 64px 36px 0 0;
+    width: 92%;
+  }
+}
+
