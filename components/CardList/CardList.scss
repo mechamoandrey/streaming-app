@@ -3,33 +3,63 @@
 .cardList {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 16px 0;
+  gap: 16px 4vw;
   
+  @include respond-to-md {
+    gap: 16px 3.7vw;
+  }
+
   @include respond-to-xl {
-    padding: 0 36px 0 0;
     gap: 32px 40px;
   }
   
   &--trending {
     flex-wrap: nowrap;
     width: fit-content;
-    margin-bottom: 38px;
+    gap: 0 0;
+
+    @include respond-to-xl {
+      padding-bottom: 8px;
+    }
   }
 }
 
 .trendingContent {
   overflow-x: scroll;
-  width: calc(100% + 4.267vw);
-  padding-right: 4.267vw;
+  width: calc(100% + var(--padding-mob));
+  padding-right: var(--padding-mob);
+  margin-bottom: 38px;
 
   @include respond-to-md {
-    width: calc(100% + 3.255vw);
-    padding-right: 3.255vw;
+    width: calc(100% + var(--padding-tab));
+    padding-right: var(--padding-tab);
   }
 
   @include respond-to-xl {
     width: calc(100% + 36px);
     padding-right: 36px;
+
+    &::-webkit-scrollbar {
+      height: 7px;
+      width: 20px;
+    }
+    
+    /* Track */
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: var(--second-color-rgb);
+      border-radius: 8px;
+      cursor: pointer;
+      max-width: 200px;
+    }
+    
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+      background: #475065;
+    }
   }
 }

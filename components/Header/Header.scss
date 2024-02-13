@@ -5,13 +5,13 @@
   justify-content: space-between;
   height: 56px;
   align-items: center;
-  background-color: rgb(var(--semi-dark-blue-rgb));
-  padding: 0 4.267vw;
+  background-color: var(--semi-dark-blue-rgb);
+  padding: 0 var(--padding-mob);
   margin-bottom: 24px;
 
   @include respond-to-md {
     height: 72px;
-    width: calc(100% - (2 * 3.255vw));
+    width: calc(100% - (2 * var(--padding-tab)));
     margin: 24px auto 32px;
     border-radius: 8px;
   }

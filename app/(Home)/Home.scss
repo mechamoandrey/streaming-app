@@ -8,15 +8,16 @@
 }
 
 .main {
-  padding: 0 4.267vw;
+  padding: 0 var(--padding-mob);
 
   @include respond-to-md {
-    padding: 0 3.255vw;
+    padding: 0 var(--padding-tab);
   }
 
   @include respond-to-xl {
     padding: 64px 36px 0 0;
-    width: 92%;
+    max-width: calc(100vw - 168px);
+    width: 100%;
   }
 }
 
