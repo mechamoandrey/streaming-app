@@ -1,3 +1,7 @@
+@import '@/styles/_responsive.scss';
+// filter: brightness(0) invert(1);
+
+
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
@@ -126,3 +130,24 @@ button {
 input {
   font-family: inherit;
 }
+
+.layout {
+  @include respond-to-xl {
+    display: flex;
+  }
+}
+
+.main {
+  padding: 0 var(--padding-mob);
+
+  @include respond-to-md {
+    padding: 0 var(--padding-tab);
+  }
+
+  @include respond-to-xl {
+    padding: 64px 36px 0 0;
+    max-width: calc(100vw - 168px);
+    width: 100%;
+  }
+}
+

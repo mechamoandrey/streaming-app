@@ -57,7 +57,7 @@ const Card = ({
           <button className="card__play" aria-label="Clique para assistir">
             <Image
               aria-hidden="true"
-              src="/icon-play.svg"
+              src="/assets/icons/icon-play.svg"
               width={30}
               height={30}
               alt="Icon of play button"
@@ -90,7 +90,7 @@ const Card = ({
           <span className="card__detail">
             <Image
               className="card__categoryIcon"
-              src={`/icon-category-${categoryType.icon}.svg`}
+              src={`/assets/icons/icon-category-${categoryType.icon}.svg`}
               width={10}
               height={10}
               alt="Icon of movie category"
