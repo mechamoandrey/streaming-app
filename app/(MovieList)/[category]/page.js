@@ -3,7 +3,7 @@
 import Search from "@/components/Search";
 import CardList from "@/components/CardList";
 
-import useMovieList from "./useHome";
+import useMovieList from "./useMovieList";
 
 export default function MovieList({ params }) {
   const {
