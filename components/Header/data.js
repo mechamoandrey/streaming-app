@@ -1,22 +1,22 @@
 export const NAV_ITEMS = [
   {
     label: "Home",
-    href: "/",
+    href: "/all",
     imgPath: "home",
   },
   {
     label: "Movies",
-    href: "/",
+    href: "/movie",
     imgPath: "movies",
   },
   {
     label: "Tv Series",
-    href: "/",
+    href: "/tv-serie",
     imgPath: "tv-series",
   },
   {
     label: "Favorites",
-    href: "/",
+    href: "/favorites",
     imgPath: "bookmark",
   },
 ];

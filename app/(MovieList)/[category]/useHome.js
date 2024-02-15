@@ -11,7 +11,7 @@ const useHome = ({ pageCategory }) => {
     movie: {
       title: "Movies",
     },
-    "tv-series": {
+    "tv-serie": {
       title: "TV Series",
     },
   };
