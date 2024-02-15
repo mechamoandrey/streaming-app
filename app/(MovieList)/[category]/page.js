@@ -10,11 +10,9 @@ export default function MovieList({ params }) {
     filteredMovies,
     setSearchValue,
     trendingMovies,
-    isNotSearch,
-    isHome,
+    cardListTitle,
+    isTrendingVisible,
   } = useMovieList({ pageCategory: params.category });
-
-  const isTrendingVisible = isHome && isNotSearch;
 
   return (
     <>
@@ -27,7 +25,7 @@ export default function MovieList({ params }) {
         <CardList title="Trending" trending={true} moviesArr={trendingMovies} />
       )}
 
-      <CardList title="Movies" moviesArr={filteredMovies} />
+      <CardList title={cardListTitle} moviesArr={filteredMovies} />
     </>
   );
 }

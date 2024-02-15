@@ -4,7 +4,20 @@ import { MOVIES_DATA } from "@/data/data";
 const useHome = ({ pageCategory }) => {
   const [searchValue, setSearchValue] = useState("");
 
+  const listTypes = {
+    all: {
+      title: "Movies",
+    },
+    movie: {
+      title: "Movies",
+    },
+    "tv-series": {
+      title: "TV Series",
+    },
+  };
+
   const isHome = pageCategory === "all";
+  const isTrendingVisible = isHome && !searchValue;
   const trendingMovies = MOVIES_DATA.filter((movie) => movie.isTrending);
   const isSearched = searchValue.length > 0;
 
@@ -33,8 +46,8 @@ const useHome = ({ pageCategory }) => {
     filteredMovies,
     setSearchValue,
     trendingMovies,
-    isNotSearch: !searchValue,
-    isHome,
+    isTrendingVisible,
+    cardListTitle: listTypes[pageCategory.replaceAll(" ", "-")].title,
   };
 };
 
