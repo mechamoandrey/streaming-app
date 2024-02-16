@@ -12,13 +12,11 @@ const Card = ({
   thumbnail,
   trending = false,
 }) => {
-  const { categoryType, toggleBookmark, cardClass, colorBookmarkSVG } = useCard(
-    {
-      isBookmarked,
-      category,
-      trending,
-    }
-  );
+  const { categoryType, toggleBookmark, cardClass } = useCard({
+    isBookmarked,
+    category,
+    trending,
+  });
 
   return (
     <li className={cardClass}>

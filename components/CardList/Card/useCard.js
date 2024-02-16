@@ -11,8 +11,6 @@ const useCard = ({ isBookmarked, category, trending }) => {
     icon: category === "Movie" ? "movie" : "tv",
   };
 
-  const colorBookmarkSVG = isFavorite ? "white" : "none";
-
   const cardClass = classnames("card", {
     ["card--trending"]: trending,
     ["card--bookmarked"]: isFavorite,
@@ -22,7 +20,6 @@ const useCard = ({ isBookmarked, category, trending }) => {
     isFavorite,
     toggleBookmark,
     categoryType,
-    colorBookmarkSVG,
     cardClass,
   };
 };
