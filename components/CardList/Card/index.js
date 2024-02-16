@@ -23,12 +23,6 @@ const Card = ({
     ["card--trending"]: trending,
   });
 
-  // heading s
-  // body m
-
-  // mobile 240 140
-  // tablet 470 230 desk
-
   return (
     <li className={cardClass}>
       <div className="card__img">

@@ -1,0 +1,15 @@
+@import '@/styles/_responsive.scss';
+
+.favorites {
+  .card-list {
+    margin-bottom: 24px;
+
+    @include respond-to-md {
+      margin-bottom: 48px;
+    }
+
+    @include respond-to-xl {
+      margin-bottom: 40px;
+    }
+  }
+}

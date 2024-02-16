@@ -4,16 +4,18 @@ import { MOVIES_DATA } from "@/data/data";
 const useHome = ({ pageCategory }) => {
   const [searchValue, setSearchValue] = useState("");
 
-  const listTypes = {
-    all: {
-      title: "Movies",
-    },
-    movie: {
-      title: "Movies",
-    },
-    "tv-serie": {
-      title: "TV Series",
-    },
+  const getHeading = () => {
+    if (isSearched) {
+      return `Found ${filteredMovies.length} results for '${searchValue}'`;
+    }
+
+    const listTypes = {
+      all: "Movies",
+      movie: "Movies",
+      "tv-serie": "TV Series",
+    };
+
+    return listTypes[pageCategory.replaceAll(" ", "-")];
   };
 
   const isHome = pageCategory === "all";
@@ -47,7 +49,7 @@ const useHome = ({ pageCategory }) => {
     setSearchValue,
     trendingMovies,
     isTrendingVisible,
-    cardListTitle: listTypes[pageCategory.replaceAll(" ", "-")].title,
+    cardListTitle: getHeading(),
   };
 };
 

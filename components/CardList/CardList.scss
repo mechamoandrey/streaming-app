@@ -1,6 +1,6 @@
 @import '@/styles/_responsive.scss';
 
-.cardList {
+.card-list {
   display: flex;
   flex-wrap: wrap;
   gap: 16px 4vw;
@@ -24,7 +24,7 @@
   }
 }
 
-.trendingContent {
+.trending-content {
   overflow-x: scroll;
   width: calc(100% + var(--padding-mob));
   padding-right: var(--padding-mob);

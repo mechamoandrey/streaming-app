@@ -5,12 +5,12 @@ import classnames from "classnames";
 import "./CardList.scss";
 
 const CardList = ({ moviesArr, title, trending }) => {
-  const listClass = classnames("cardList", {
-    ["cardList--trending"]: trending,
+  const listClass = classnames("card-list", {
+    ["card-list--trending"]: trending,
   });
 
   const listContentClass = classnames({
-    ["trendingContent"]: trending,
+    ["trending-content"]: trending,
   });
 
   return (

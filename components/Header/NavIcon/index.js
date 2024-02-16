@@ -1,11 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import "./NavItem.scss";
+import "./NavIcon.scss";
 
-const NavItem = ({ href, label, imgPath }) => {
+const NavIcon = ({ href, label, imgPath }) => {
   return (
-    <Link href={href} aria-label={label} className="navIcon">
+    <Link href={href} aria-label={label} className="nav-icon">
       <Image
         src={`/assets/icons/icon-nav-${imgPath}.svg`}
         alt={`Icon ${label}`}
@@ -17,4 +17,4 @@ const NavItem = ({ href, label, imgPath }) => {
   );
 };
 
-export default NavItem;
+export default NavIcon;
