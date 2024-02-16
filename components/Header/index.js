@@ -1,4 +1,4 @@
-import NavItem from "./NavItem";
+import NavIcon from "./NavIcon";
 import Image from "next/image";
 import { NAV_ITEMS } from "./data";
 
@@ -18,7 +18,7 @@ const Header = () => {
 
       <nav>
         {NAV_ITEMS.map((data, index) => (
-          <NavItem key={index} {...data} />
+          <NavIcon key={index} {...data} />
         ))}
       </nav>
 

@@ -6,6 +6,12 @@
 
   @include respond-to-md {
     width: 28.646vw;
+
+    &:hover {
+      .card__hovered {
+        display: flex;
+      }
+    }
   }
 
   @include respond-to-xl {
@@ -20,12 +26,6 @@
     
     @include respond-to-md {
       height: 140px;
-      
-      &:hover {
-        .card__hovered {
-          display: flex;
-        }
-      }
     }
   
     @include respond-to-xl {
@@ -76,11 +76,10 @@
     width: 32px;
     border-radius: 50%;
     background-color: #161d2f57;
-    transition: all 320ms ease-in-out;
-  
-    &:hover {
-      opacity: 0.8;
-      transform: scale(1.02);
+    fill: none;
+
+    svg {
+      stroke: white;
     }
   }
 
@@ -123,6 +122,24 @@
     font-weight: 400;
   }
 
+  &--bookmarked {
+    .card__bookmark {
+      fill: white;
+    }
+  }
+
+  &:not(.card--bookmarked) {
+    .card__bookmark {
+      &:hover {
+        opacity: 0.8;
+        background-color: white;
+
+        svg {
+          stroke: black;
+        }
+      }
+    }
+  }
 
   &--trending { 
     width:  64vw;
