@@ -2,14 +2,22 @@
 
 .nav-item {
   display: inline-block;
+  position: relative;
   width: 16px;
   height: 16px;
-  position: relative;
   fill: var(--second-color-rgb);
 
   @include respond-to-xl {
     &:hover {
       fill: var(--red-rgb);
+    }
+  }
+
+  svg {
+    transform: scale(0.8);
+
+    @include respond-to-md {
+      transform: unset;
     }
   }
 
@@ -22,6 +30,7 @@
     display: block;
     margin: 0 auto;
   }
+
 
   &:not(:last-child) {
     @media (max-width: 1200px) {
