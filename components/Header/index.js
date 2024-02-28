@@ -1,6 +1,5 @@
 import NavItems from "./NavItems";
 import Image from "next/image";
-import { NAV_ITEMS } from "./data";
 
 import "./Header.scss";
 
