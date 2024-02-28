@@ -5,6 +5,11 @@
   align-items: center;
   margin-bottom: 24px;
   position: relative;
+
+  @include respond-to-xl  {
+    padding-right: 36px;
+  }
+  
   &:focus{
     outline: none;
   }

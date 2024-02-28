@@ -13,6 +13,12 @@
     gap: 32px 40px;
   }
   
+  &:not(.card-list--trending) {
+    @include respond-to-xl  {
+      padding-right: 36px;
+    }
+  }
+
   &--trending {
     flex-wrap: nowrap;
     width: fit-content;

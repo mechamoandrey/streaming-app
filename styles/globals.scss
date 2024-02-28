@@ -148,7 +148,7 @@ input {
   }
 
   @include respond-to-xl {
-    padding: 64px 36px 64px 0;
+    padding: 64px 0;
     max-width: calc(100vw - 168px);
     width: 100%;
     overflow: auto;
