@@ -1,4 +1,4 @@
-import NavIcon from "./NavIcon";
+import NavItems from "./NavItems";
 import Image from "next/image";
 import { NAV_ITEMS } from "./data";
 
@@ -17,9 +17,7 @@ const Header = () => {
       </div>
 
       <nav>
-        {NAV_ITEMS.map((data, index) => (
-          <NavIcon key={index} {...data} />
-        ))}
+        <NavItems />
       </nav>
 
       <div className="header__avatar">

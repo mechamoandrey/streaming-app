@@ -4,6 +4,10 @@
   display: flex;
   align-items: center;
   margin-bottom: 24px;
+  position: relative;
+  &:focus{
+    outline: none;
+  }
 
   &__icon {
     position: relative;
@@ -17,16 +21,23 @@
   }
   
   &__input {
-    padding-left: 14px;
+    margin-left: 14px;
     background-color: transparent;
     font-size: 16px;
     font-weight: 300;
     color: white;
     border: none;
     width: 100%;
+    caret-color: var(--red-rgb);
+    position: relative;
   
     @include respond-to-md {
       font-size: 24px;
+    }
+
+    &:focus{
+      outline: none;
+      border-bottom: 1px solid var(--second-color-rgb);
     }
   }
 }

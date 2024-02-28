@@ -22,8 +22,10 @@
     width: 96px;
     padding: 32px 32px;
     display: block;
-    position: relative;
-    margin: 32px 36px 0;
+    position: fixed;
+    margin: 0 0;
+    left: 36px;
+    top: 32px;
   }
 
   &__logo {

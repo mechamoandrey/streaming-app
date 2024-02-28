@@ -1,10 +1,17 @@
 @import '@/styles/_responsive.scss';
 
-.nav-icon {
+.nav-item {
   display: inline-block;
   width: 16px;
   height: 16px;
   position: relative;
+  fill: var(--second-color-rgb);
+
+  @include respond-to-xl {
+    &:hover {
+      fill: var(--red-rgb);
+    }
+  }
 
   @include respond-to-md {
     width: 20px;
